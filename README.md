@@ -4,6 +4,7 @@
 ```
 ln -s [repo] ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
+dos2unix ~/.vim/bundles/opencl/syntax/opencl.vim
 ```
 
 ###Windows
