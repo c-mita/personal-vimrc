@@ -73,6 +73,15 @@ let g:xml_syntax_folding=1
 au FileType python call ConfigureForPython() 
 au BufWritePre *.py :%s/\s\+$//e "strip spaces
 
+
+"[OPENCL]"
+
+function! ConfigureForOpenCl()
+    set ft=opencl
+endfunction
+
+au BufNewFile,BufRead *.cl call ConfigureForOpenCl()
+
 "[GIT]
 
 au FileType gitcommit au! BufEnter call setpos('.', [0, 1, 1, 0])
