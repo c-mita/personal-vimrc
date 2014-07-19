@@ -22,7 +22,6 @@ set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set foldmethod=manual
 syntax on
 
 inoremap jk <esc>
