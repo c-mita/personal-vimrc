@@ -14,6 +14,7 @@ au VimEnter * set splitbelow
 au VimEnter * set splitright
 
 filetype plugin on
+filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set foldmethod=syntax
 set guifont=Inconsolata\ Medium\ 10
