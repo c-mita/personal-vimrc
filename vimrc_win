@@ -1,0 +1,39 @@
+command! -nargs=* RPy silent !start cmd /c python "%:p" <args> & pause
+command! -nargs=* TPy !echo "% <args> -k"
+set guifont=Consolas:h9:cANSI
+
+map <MiddleMouse> <Nop>
+imap <2-MiddleMouse> <Nop>
+map <2-MiddleMouse> <Nop>
+imap <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+imap <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>
+imap <4-MiddleMouse> <Nop>
+
+"Comes from gvim default install on Windows
+set diffexpr=MyDiff()
+function! MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+

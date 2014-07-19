@@ -50,8 +50,9 @@ command Wqa :wqa
 command WQa :wqa
 
 if has("win32")
+    runtime vimrc_win
 else
-    runtime .vimrc_linux
+    runtime vimrc_linux
 endif
 
 "[PYTHON]"
