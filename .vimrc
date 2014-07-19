@@ -49,40 +49,12 @@ command WQA :wqa
 command Wqa :wqa
 command WQa :wqa
 
+if has("win32")
+else
+    runtime .vimrc_linux
+endif
+
 "[PYTHON]"
-
-"Run Python scripts from gvim
-
-let s:python_26 = 26
-let s:python_27 = 27
-let s:python_3 = 3
-
-command! -nargs=* RPy silent !gnome-terminal -e "bash -c 'cd %:p:h; python %:p <args>; read'" <CR>
-
-command! Py26 call SetPythonVersion( s:python_26 )
-command! Py27 call SetPythonVersion( s:python_27 )
-command! Py3 call SetPythonVersion( s:python_3 ) 
-
-function! SetPythonVersion( pVersion )
-    if a:pVersion == s:python_26
-        command! -nargs=* RPy silent !gnome-terminal -e "bash -c 'cd %:p:h; module load python/2.6.6; python %:p <args>; read'" <CR>
-        Python2Syntax
-        echo "Set to Python 2.6"
-    elseif a:pVersion == s:python_27
-        command! -nargs=* RPy silent !gnome-terminal -e "bash -c 'cd %:p:h; module load python/2.7; python %:p <args>; read'" <CR>
-        Python2Syntax
-        echo "Set to Python 2.7"
-    elseif a:pVersion == s:python_3
-        command! -nargs=* RPy silent !gnome-terminal -e "bash -c 'cd %:p:h; module load python/3.2.2; python %:p <args>; read'" <CR>
-        Python3Syntax
-        echo "Set to Python 3.2"
-    else
-        command! -nargs=* RPy silent !gnome-terminal -e "bash -c 'cd %:p:h; python %:p <args>; read'" <CR>
-        echo "Unknown parameter - Set to default Python version"
-    endif
-endfunction
-
-command! -nargs=* TPy !echo "bash -c 'cd %:p:h; python %:p <args>; read'"
 
 "Setup basic python stuff
 function! ConfigureForPython()
