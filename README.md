@@ -1,2 +1,3 @@
 ln -s [repo] ~/.vim
-ln -s ~/.vim/.vimrc ~/.vim
+
+ln -s ~/.vim/vimrc ~/.vimrc
