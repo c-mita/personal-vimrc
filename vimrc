@@ -2,6 +2,8 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
 
+set encoding=utf-8
+
 syntax enable
 if has('gui_running')
     colorscheme lucius
