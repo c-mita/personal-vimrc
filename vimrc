@@ -10,8 +10,9 @@ else
     colorscheme ron
 endif
 au VimEnter * MBEOpen
-au VimEnter * set splitbelow 
+au VimEnter * set splitbelow
 au VimEnter * set splitright
+au BufRead * :YAIFAMagic
 
 filetype plugin on
 filetype plugin indent on
@@ -23,6 +24,8 @@ set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set foldmethod=manual
+set foldnestmax=3
 syntax on
 
 inoremap jk <esc>
@@ -55,6 +58,9 @@ else
     runtime vimrc_linux
 endif
 
+"120 character line limit
+match Error /\%121v.\+/
+
 "[PYTHON]"
 
 "Setup basic python stuff
@@ -67,13 +73,21 @@ function! ConfigureForPython()
 endfunction
 
 "lucius
-let python_highlight_all=1 
+let python_highlight_all=1
 let python_version_2 = 1
 let g:xml_syntax_folding=1
 
-au FileType python call ConfigureForPython() 
-au BufWritePre *.py :%s/\s\+$//e "strip spaces
+au FileType python call ConfigureForPython()
+au BufWritePre * :%s/\s\+$//e "strip spaces
 
+"[JAVA]
+
+function! ConfigureJava()
+    set autoindent
+    set smartindent
+endfunction
+
+au FileType java call ConfigureJava()
 
 "[OPENCL]"
 
