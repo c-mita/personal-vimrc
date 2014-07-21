@@ -110,3 +110,7 @@ au BufNewFile,BufRead *.cl call ConfigureForOpenCl()
 "[GIT]
 
 au FileType gitcommit au! BufEnter call setpos('.', [0, 1, 1, 0])
+
+if filereadable( $HOME . "/.vim/vimrc_specific" )
+    runtime vimrc_specific
+endif
