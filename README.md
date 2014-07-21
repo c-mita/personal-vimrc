@@ -1,5 +1,14 @@
 ##Usage
 
+```
+git clone git@github.com:xen-0/personal-vimrc.git --recursive
+
+#for updates
+git pull
+git submodule update --init --recursive
+```
+
+
 ###Linux
 ```
 ln -s [repo] ~/.vim
