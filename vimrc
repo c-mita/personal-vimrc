@@ -2,13 +2,17 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
 
+syntax enable
 if has('gui_running')
     colorscheme lucius
     LuciusDarkLowContrast
     au VimEnter * NERDTree
     au VimEnter * wincmd p
 else
-    colorscheme ron
+    set t_Co=256
+    let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
 endif
 au VimEnter * MBEOpen
 au VimEnter * set splitbelow
@@ -27,7 +31,6 @@ set shiftwidth=4
 set expandtab
 set foldmethod=manual
 set foldnestmax=3
-syntax on
 
 inoremap jk <esc>
 inoremap <Home> <esc>^i
@@ -101,5 +104,3 @@ au BufNewFile,BufRead *.cl call ConfigureForOpenCl()
 "[GIT]
 
 au FileType gitcommit au! BufEnter call setpos('.', [0, 1, 1, 0])
-
-
