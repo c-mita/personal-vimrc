@@ -30,3 +30,6 @@
 	path = bundle/yaifa
 	url = git@github.com:vim-scripts/yaifa.vim.git
 	ignore = dirty
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
