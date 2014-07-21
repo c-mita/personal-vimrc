@@ -19,6 +19,9 @@ au VimEnter * set splitbelow
 au VimEnter * set splitright
 au BufRead * :YAIFAMagic
 
+set lcs=eol:↲,tab:>-,trail:·
+set list
+
 filetype plugin on
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
@@ -29,7 +32,6 @@ set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set foldmethod=manual
 set foldnestmax=3
 
 inoremap jk <esc>
