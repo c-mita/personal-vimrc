@@ -48,6 +48,10 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+"add/remove spaces between brackets
+nnoremap <C-S-O> [(ldw])beldw
+nnoremap <C-S-I> [(a <Esc>])i <Esc>
+
 command Q :q
 command Qa :qa
 command QA :qa
