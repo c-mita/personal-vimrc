@@ -71,6 +71,26 @@ endif
 "120 character line limit
 match Error /\%121v.\+/
 
+"Ignores
+set wildignore+=*.swp,*.class,*.o,*~
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+
+command! -nargs=1 SD call CtrlPSpecificDirectory( <f-args> )
+command! -nargs=1 Sd call CtrlPSpecificDirectory( <f-args> )
+
+function! CtrlPSpecificDirectory( directory )
+    let l:default = 'ra'
+    if exists( "g:ctrlp_working_path_mode" )
+        let l:default = g:ctrlp_working_path_mode
+    endif
+    let g:ctrlp_working_path_mode = 0
+    exe 'cd' a:directory
+    echo a:directory
+    CtrlP
+    let g:ctrlp_working_path_mode = l:default
+endfunction
+
+
 "[PYTHON]"
 
 "Setup basic python stuff
