@@ -11,6 +11,7 @@ if has('gui_running')
     au VimEnter * NERDTree
     au VimEnter * wincmd p
 else
+    set t_Co=256
     colorscheme lucius
     LuciusDarkLowContrast
 endif
