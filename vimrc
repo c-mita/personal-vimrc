@@ -9,7 +9,6 @@ if has('gui_running')
     au VimEnter * NERDTree
     au VimEnter * wincmd p
 else
-    set t_Co=256
     let g:solarized_termcolors=256
     set background=dark
     colorscheme solarized
@@ -108,7 +107,7 @@ let python_version_2 = 1
 let g:xml_syntax_folding=1
 
 au FileType python call ConfigureForPython()
-au BufWritePre * :%s/\s\+$//e "strip spaces
+"au BufWritePre * :%s/\s\+$//e "strip spaces
 
 "[JAVA]
 
