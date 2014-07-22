@@ -12,9 +12,9 @@ if has('gui_running')
     au VimEnter * wincmd p
 else
     set t_Co=256
-    let g:solarized_termcolors=256
     set background=dark
-    colorscheme solarized
+    colorscheme lucius
+    LuciusDarkLowContrast
 endif
 au VimEnter * MBEOpen
 au VimEnter * set splitbelow
