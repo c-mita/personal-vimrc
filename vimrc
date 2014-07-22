@@ -2,6 +2,9 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
 
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set vb t_vb=
+
 set encoding=utf-8
 
 syntax enable
