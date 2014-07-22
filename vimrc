@@ -11,8 +11,6 @@ if has('gui_running')
     au VimEnter * NERDTree
     au VimEnter * wincmd p
 else
-    set t_Co=256
-    set background=dark
     colorscheme lucius
     LuciusDarkLowContrast
 endif
@@ -73,6 +71,26 @@ endif
 "120 character line limit
 match Error /\%121v.\+/
 
+"Ignores
+set wildignore+=*.swp,*.class,*.o,*~
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+
+command! -nargs=1 SD call CtrlPSpecificDirectory( <f-args> )
+command! -nargs=1 Sd call CtrlPSpecificDirectory( <f-args> )
+
+function! CtrlPSpecificDirectory( directory )
+    let l:default = 'ra'
+    if exists( "g:ctrlp_working_path_mode" )
+        let l:default = g:ctrlp_working_path_mode
+    endif
+    let g:ctrlp_working_path_mode = 0
+    exe 'cd' a:directory
+    echo a:directory
+    CtrlP
+    let g:ctrlp_working_path_mode = l:default
+endfunction
+
+
 "[PYTHON]"
 
 "Setup basic python stuff
@@ -90,7 +108,7 @@ let python_version_2 = 1
 let g:xml_syntax_folding=1
 
 au FileType python call ConfigureForPython()
-au BufWritePre * :%s/\s\+$//e "strip spaces
+"au BufWritePre * :%s/\s\+$//e "strip spaces
 
 "[JAVA]
 
@@ -112,3 +130,7 @@ au BufNewFile,BufRead *.cl call ConfigureForOpenCl()
 "[GIT]
 
 au FileType gitcommit au! BufEnter call setpos('.', [0, 1, 1, 0])
+
+if filereadable( $HOME . "/.vim/vimrc_specific" )
+    runtime vimrc_specific
+endif
