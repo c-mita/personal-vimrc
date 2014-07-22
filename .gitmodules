@@ -20,7 +20,7 @@
 	ignore = dirty
 [submodule "bundle/vim-cpp-enhanced-highlight"]
 	path = bundle/vim-cpp-enhanced-highlight
-	url = git@github.com:octol/vim-cpp-enhanced-highlight.github
+	url = git@github.com:octol/vim-cpp-enhanced-highlight.git
 	 ignore = dirty
 [submodule "bundle/opencl"]
 	path = bundle/opencl
@@ -36,9 +36,9 @@
 	ignore = dirty
 [submodule "bundle/solarized"]
 	path = bundle/solarized
-	url = git@github.com:altercation/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
 	ignore = dirty
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = git@github.com:tpope/vim-fugitive.gi
+	url = git@github.com:tpope/vim-fugitive.git
 	ignore = dirty
