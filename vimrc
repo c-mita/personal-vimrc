@@ -72,8 +72,10 @@ else
     runtime vimrc_linux
 endif
 
-"120 character line limit
-match Error /\%121v.\+/
+"match columns > 120
+au BufWinEnter * let w:mlength = matchadd('Error', '\%121v.\+', -2)
+"match trailing whitespace and spaces before tabs
+au BufWinEnter * let w:mtrailing = matchadd('Error', '\s\+$\| \+\ze\t , -2')
 
 "Ignores
 set wildignore+=*.swp,*.class,*.o,*~
