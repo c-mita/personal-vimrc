@@ -21,7 +21,6 @@ endif
 au VimEnter * MBEOpen
 au VimEnter * set splitbelow
 au VimEnter * set splitright
-au BufRead * :YAIFAMagic
 
 set lcs=eol:↲,tab:>-,trail:·
 set list
@@ -37,6 +36,31 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set foldnestmax=3
+
+au BufRead * :YAIFAMagic
+au BufWinEnter * call SetWhitespaceHighlighting()
+
+highlight ExtraWhiteSpace ctermbg=52
+
+function! SetWhitespaceHighlighting()
+    if &expandtab
+        if exists('w:mspaceindent')
+            call matchdelete(w:mspaceindent)
+            unlet w:mspaceindent
+        endif
+        if !exists('w:mtabindent')
+            let w:mtabindent = matchadd('ExtraWhiteSpace', '^\t\+')
+        endif
+    else
+        if exists('w:mtabindent')
+            call matchdelete(w:mtabindent)
+            unlet w:mtabindent
+        endif
+        if !exists('w:mspaceindent')
+            let w:mspaceindent = matchadd('ExtraWhiteSpace', '^ \+')
+        endif
+    endif
+endfunction
 
 inoremap jk <esc>
 inoremap <Home> <esc>^i
