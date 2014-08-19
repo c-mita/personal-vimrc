@@ -158,9 +158,14 @@ endfunction
 au BufNewFile,BufRead *.cl call ConfigureForOpenCl()
 
 "[GIT]
+"
+function ConfigureForGit()
+    au! BufEnter * call setpos('.', [0, 1, 1, 0])
+    setlocal spell textwidth=72
+endfunction
 
-au FileType gitcommit au! BufEnter call setpos('.', [0, 1, 1, 0])
-au FileType gitcommit setlocal spell textwidth=72
+au FileType gitcommit call ConfigureForGit()
+
 
 if filereadable( $HOME . "/.vim/vimrc_specific" )
     runtime vimrc_specific
