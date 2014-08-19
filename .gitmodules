@@ -42,3 +42,7 @@
 	path = bundle/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 	ignore = dirty
+[submodule "bundle/fugitive-blame"]
+	path = bundle/fugitive-blame
+	url = git@github.com:tommcdo/vim-fugitive-blame-ext.git
+	ignore = dirty
