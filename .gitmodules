@@ -46,3 +46,7 @@
 	path = bundle/fugitive-blame
 	url = git@github.com:tommcdo/vim-fugitive-blame-ext.git
 	ignore = dirty
+[submodule "bundle/python-syntax"]
+	path = bundle/python-syntax
+	url = git@github.com:hdima/python-syntax.git
+	ignore = dirty
