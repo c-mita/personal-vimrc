@@ -105,6 +105,11 @@ au BufWinEnter * let w:mtrailing = matchadd('Error', '\s\+$\| \+\ze\t , -2')
 set wildignore+=*.swp,*.class,*.o,*~
 let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 
+
+"[CTRLP]"
+
+let g:ctrlp_working_path_mode='rw'
+
 command! -nargs=1 SD call CtrlPSpecificDirectory( <f-args> )
 command! -nargs=1 Sd call CtrlPSpecificDirectory( <f-args> )
 
