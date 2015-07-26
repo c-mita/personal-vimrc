@@ -126,6 +126,20 @@ function! CtrlPSpecificDirectory( directory )
     let g:ctrlp_working_path_mode = l:default
 endfunction
 
+"[CLANG_COMPLETE]"
+if has("win32")
+    let g:clang_use_library = 1
+    "let g:clang_library_path='C:\llvm\build\Release\bin'
+    "May need to configure library path specifically
+    let g:clang_user_options='|| exit 0' "magic setting to make
+    set conceallevel=2
+    set concealcursor=vin
+    let g:clang_snippets=1
+    let g:clang_conceal_snippets=1
+    let g:clang_snippets_engine='clang_complete'
+    set completeopt=menu,menuone
+    let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+endif
 
 "[PYTHON]"
 
