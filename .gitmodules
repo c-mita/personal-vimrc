@@ -54,3 +54,6 @@
 	path = bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
 	ignore = dirty
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = git@github.com:vim-scripts/taglist.vim.git

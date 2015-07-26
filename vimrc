@@ -7,11 +7,12 @@ autocmd GUIEnter * set vb t_vb=
 
 set encoding=utf-8
 
+au VimEnter * TlistOpen
+
 syntax enable
 if has('gui_running')
     colorscheme lucius
     LuciusDarkLowContrast
-    au VimEnter * NERDTree
     au VimEnter * wincmd p
 else
     set t_Co=256
