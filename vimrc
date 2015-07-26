@@ -7,6 +7,9 @@ autocmd GUIEnter * set vb t_vb=
 
 set encoding=utf-8
 
+set backspace=2
+set backspace=indent,eol,start
+
 au VimEnter * TlistOpen
 
 syntax enable
