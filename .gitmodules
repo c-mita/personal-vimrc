@@ -57,6 +57,8 @@
 [submodule "bundle/clang_complete"]
 	path = bundle/clang_complete
 	url = git@github.com:Rip-Rip/clang_complete.git
+	ignore = dirty
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git@github.com:vim-scripts/taglist.vim.git
+	ignore = dirty
