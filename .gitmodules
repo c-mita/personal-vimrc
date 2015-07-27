@@ -62,3 +62,8 @@
 	path = bundle/taglist
 	url = git@github.com:vim-scripts/taglist.vim.git
 	ignore = dirty
+[submodule "bundle/vim-lldb"]
+	path = bundle/vim-lldb
+	url = git@github.com:xen-0/vim-lldb.git
+	branch = no-startup-msg
+	ignore = dirty
