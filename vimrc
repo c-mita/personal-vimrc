@@ -36,6 +36,7 @@ set foldmethod=syntax
 set guifont=Inconsolata\ Medium\ 10
 
 set number
+set relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -45,6 +46,14 @@ au BufRead * :YAIFAMagic
 au BufWinEnter * call SetWhitespaceHighlighting()
 
 highlight ExtraWhiteSpace ctermbg=52
+
+function! RelNumberToggle()
+    if (&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
 
 function! SetWhitespaceHighlighting()
     if &expandtab
@@ -75,6 +84,7 @@ nnoremap '# :let @/ = ""<CR>
 nnoremap <C-Up> :m .-2<CR>
 nnoremap <C-Down> :m .1<CR>
 nnoremap <space> za
+nnoremap rn :call RelNumberToggle()<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
