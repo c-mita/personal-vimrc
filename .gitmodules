@@ -71,3 +71,7 @@
 	path = bundle/mark_karkat
 	url = git@github.com:vim-scripts/Mark--Karkat.git
 	ignore = dirty
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+	ignore = dirty
