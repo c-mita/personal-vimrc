@@ -67,3 +67,7 @@
 	url = git@github.com:xen-0/vim-lldb.git
 	branch = no-startup-msg
 	ignore = dirty
+[submodule "bundle/mark_karkat"]
+	path = bundle/mark_karkat
+	url = git@github.com:vim-scripts/Mark--Karkat.git
+	ignore = dirty
