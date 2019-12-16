@@ -75,3 +75,11 @@
 	path = bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
 	ignore = dirty
+[submodule "async"]
+	path = bundle/async
+	url = git@github.com:prabirshrestha/async.vim.git
+	ignore = dirty
+[submodule "vim-lsp"]
+	path = bundle/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
+	ignore = dirty
