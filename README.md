@@ -1,4 +1,4 @@
-##Usage
+## Usage
 
 ```
 git clone git@github.com:xen-0/personal-vimrc.git --recursive
@@ -9,7 +9,7 @@ git submodule update --init --recursive
 ```
 
 
-###Linux
+### Linux
 ```
 ln -s [repo] ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
@@ -20,7 +20,7 @@ Add to ~/.bashrc
 export TERM='xterm-256color'
 ```
 
-###Windows
+### Windows
 Open administrator command prompt:
 ```
 mklink /D vimfiles [repo]
