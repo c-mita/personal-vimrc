@@ -12,6 +12,8 @@ set encoding=utf-8
 set backspace=2
 set backspace=indent,eol,start
 
+set hlsearch
+
 syntax enable
 if has('gui_running')
     colorscheme lucius
