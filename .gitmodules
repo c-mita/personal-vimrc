@@ -83,3 +83,7 @@
 	path = bundle/vim-lsp
 	url = git@github.com:prabirshrestha/vim-lsp.git
 	ignore = dirty
+[submodule "vim-signify"]
+	path = bundle/vim-signify
+	url = git@github.com:mhinz/vim-signify.git
+	ignore = dirty
