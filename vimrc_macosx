@@ -1,0 +1,7 @@
+function RunCommand(command)
+    let l:cmd = "terminal bash -c \"cd %:p:h; " . a:command . "/""
+    exec l:cmd
+    redraw!
+endfunction
+
+command! -nargs=* RPy call RunCommand("python %:p <args>")

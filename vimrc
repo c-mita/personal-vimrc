@@ -106,6 +106,8 @@ command WQa :wqa
 
 if has("win32")
     runtime vimrc_win
+elseif has("macunix")
+    runtime vimrc_macosx
 else
     runtime vimrc_linux
 endif
