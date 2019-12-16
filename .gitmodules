@@ -87,3 +87,10 @@
 	path = bundle/vim-signify
 	url = git@github.com:mhinz/vim-signify.git
 	ignore = dirty
+[submodule "syntastic"]
+	path = bundle/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git
+	ignore = dirty
+[submodule "vcscommand"]
+	path = bundle/vcscommand
+	url = git@github.com:vim-scripts/vcscommand.vim.git
