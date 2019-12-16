@@ -94,3 +94,6 @@
 [submodule "vcscommand"]
 	path = bundle/vcscommand
 	url = git@github.com:vim-scripts/vcscommand.vim.git
+[submodule "vim-airline-themes"]
+	path = bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
