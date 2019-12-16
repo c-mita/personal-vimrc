@@ -2,6 +2,8 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
 
+let mapleader="\<space>"
+
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set vb t_vb=
 
@@ -9,8 +11,6 @@ set encoding=utf-8
 
 set backspace=2
 set backspace=indent,eol,start
-
-au VimEnter * TlistOpen
 
 syntax enable
 if has('gui_running')
@@ -36,7 +36,7 @@ set foldmethod=syntax
 set guifont=Inconsolata\ Medium\ 10
 
 set number
-set relativenumber
+set norelativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -83,16 +83,16 @@ nnoremap <Home><Home> 0
 nnoremap '# :let @/ = ""<CR>
 nnoremap <C-Up> :m .-2<CR>
 nnoremap <C-Down> :m .1<CR>
-nnoremap <space> za
+nnoremap <Leader><space> za
 nnoremap rn :call RelNumberToggle()<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
-
-"add/remove spaces between brackets
-nnoremap <C-S-O> [(ldw])beldw
-nnoremap <C-S-I> [(a <Esc>])i <Esc>
+nmap <Leader><Up> :wincmd k<CR>
+nmap <Leader><Down> :wincmd j<CR>
+nmap <Leader><Left> :wincmd h<CR>
+nmap <Leader><Right> :wincmd l<CR>
 
 command Q :q
 command Qa :qa
