@@ -44,7 +44,7 @@ set shiftwidth=4
 set expandtab
 set foldnestmax=3
 
-au BufRead * :YAIFAMagic
+"au BufRead * :YAIFAMagic
 au BufWinEnter * call SetWhitespaceHighlighting()
 
 highlight ExtraWhiteSpace ctermbg=52
