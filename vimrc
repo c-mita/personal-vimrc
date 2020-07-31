@@ -14,6 +14,8 @@ set backspace=indent,eol,start
 
 set hlsearch
 
+set scrolloff=2
+
 syntax enable
 if has('gui_running')
     colorscheme lucius
@@ -202,6 +204,7 @@ function ConfigureForGit()
 endfunction
 
 au FileType gitcommit call ConfigureForGit()
+au FileType hgcommit call ConfigureForGit()
 
 
 if filereadable( $HOME . "/.vim/vimrc_specific" )
